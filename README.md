@@ -1,5 +1,13 @@
 # PHP III - Jan 2019
 
+## TODO
+* Find a better example of delegating generator
+## Homework
+* For Wed 9 Jan 2019
+    * Lab: Setting up Apache Jmeter
+    * Lab: Setting up the Jenkins CI
+## ERRATA
+* runTransactionModel doesn't seem to work
 ## Class Notes
 * DateTime formats
     * `j` == day of month _without_ leading zeros
