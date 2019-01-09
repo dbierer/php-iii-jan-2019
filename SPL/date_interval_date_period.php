@@ -18,6 +18,7 @@ function datesString()
     $now = new DateTime('now');
     // see: http://php.net/manual/en/datetime.formats.relative.php
     $int = DateInterval::createFromDateString('first tuesday of next month');
+    $now->add($int);
     $period = new DatePeriod($now, $int, 12);
 
     foreach ($period as $date) {
