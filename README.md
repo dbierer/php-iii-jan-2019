@@ -1,7 +1,11 @@
 # PHP III - Jan 2019
 
+file:///D:/Repos/PHP-Fundamentals-III/Course_Materials/index.html#/2/40
+
 ## TODO
 * Find a better example of delegating generator
+* Pull anon class examples into this repo
+
 ## Homework
 * For Wed 9 Jan 2019
     * Lab: Setting up Apache Jmeter
