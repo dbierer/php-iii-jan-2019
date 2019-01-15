@@ -2,11 +2,20 @@
 
 file:///D:/Repos/PHP-Fundamentals-III/Course_Materials/index.html#/3/25
 
-## TODO
-* Find a better example of delegating generator
-* Pull examples of doubly links list into the repo
-* Pull example of priorityQueue into the repo
-* How do you run PHP in a Windows BAT file?
+## Q & A
+* Q: Is there a good example of delegating generator?
+* A: https://github.com/dbierer/php7_examples/blob/master/php_7_0/generator_delegation_words.php
+ 
+* Q: Is there an example of doubly linked list?
+* A: See: https://github.com/dbierer/php7cookbook/blob/master/source/chapter10/chap_10_linked_double.php
+
+* Q: How do you run PHP in a Windows BAT file?
+* A: First of all, make sure the PHP executable is in your PATH
+    * See: https://stackoverflow.com/questions/12870880/run-php-file-in-windows-cmd
+    * Then all you need to do is to enter the following inside your `*.bat` file:
+```
+php c:\path\to\script.php
+```
 
 ## Homework
 * For Wed 16 Jan 2018
