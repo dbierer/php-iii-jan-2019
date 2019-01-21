@@ -1,10 +1,18 @@
 # PHP III - Jan 2019
 
 file:///D:/Repos/PHP-Fundamentals-III/Course_Materials/index.html#/5/7
+NOTE TO SELF: backtrack through Jenkins lab to see if you can replicate errors Gertjan reported
+NOTE TO SELF: apigility: ZF2 or ZF3?
+NOTE TO SELF: find actual doc page which shows mapping: file:///D:/Repos/PHP-Fundamentals-III/Course_Materials/index.html#/7/48
+NOTE TO SELF: locate docs which show where $this->mapper is defined and how to get to it
 
 ## Homework
+* For Wed 23 Jan 2019
+    * Lab: Building a REST Service API
+    * Lab: REST Service Code Review and Stub Development
+    * Lab: REST Service Testing
 * For Mon 21 Jan 2019
-    * Lab: Phing 
+    * Lab: Phing
         * Prerequisites Lab
         * Phing Execution Lab
         * Phing Deployment Lab
@@ -38,6 +46,13 @@ php -S localhost:8080
     * Lab: Setting up the Jenkins CI
 
 ## Q & A
+*
+* Q: FAQ on Docker?
+* A: See: https://stackoverflow.com/questions/tagged/docker-image?sort=votes&pageSize=50
+
+* Q: After the PHP 7.3 installation, how to change it back?
+* A:
+
 * Q: What is meant by "interned_strings_buffer" ? (OpCache)
 * A: See: https://stackoverflow.com/questions/27300219/zend-opcache-performance-settings-vs-default-settings
 
@@ -108,4 +123,11 @@ $view = $controller->init($config);
 
 $view->render();
 ```
-
+* phing lab:
+    * from Gertjan to Host (privately): error happend at slide 213: phing -f build.xml
+* file:///D:/Repos/PHP-Fundamentals-III/Course_Materials/index.html#/5/43: dir structure changed
+    * Unable to complete lab
+    * See email for errors
+    * /home/vagrant/Zend/workspaces/DefaultWorkspace/php3/src/ModTargetedServerEnvironments/Deployment/Jenkins/build-JCI
+    * Suggestion: just use one user for both labs
+    * Troubleshooting tips: i.e. when do you have restart Jenkins, or refresh the browser
