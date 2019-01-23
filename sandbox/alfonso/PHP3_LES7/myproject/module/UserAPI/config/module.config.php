@@ -27,7 +27,7 @@ return [
             0 => 'user-api.rest.user',
             1 => 'user-api.rest.user-profile',
         ],
-        'default_version' => 2,
+        'default_version' => 1,
     ],
     'zf-rest' => [
         'UserAPI\\V1\\Rest\\User\\Controller' => [
