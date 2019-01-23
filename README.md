@@ -5,8 +5,20 @@ NOTE TO SELF: backtrack through Jenkins lab to see if you can replicate errors G
 NOTE TO SELF: apigility: ZF2 or ZF3?
 NOTE TO SELF: find actual doc page which shows mapping: file:///D:/Repos/PHP-Fundamentals-III/Course_Materials/index.html#/7/48
 NOTE TO SELF: locate docs which show where $this->mapper is defined and how to get to it
+NOTE TO SELF: get Stratigility app working!
 
 ## Homework
+* For Fri 25 Jan 2019
+    * Lab: get the existing Stratigility app running
+    * Lab: Zend Expressive
+        * https://docs.zendframework.com/zend-expressive/
+        * Use the existing app under /expressive
+        * If you feel brave: remove and overwrite with a new project
+        * FlyingElephant API Middleware Lab:
+            * convert the API software to middleware
+            * OR use an existing middleware package (i.e. Slim JWT Authentication)
+            * OR copy the demo module included in full install and make changes
+        * Middleware Testing Lab
 * For Wed 23 Jan 2019
     * Lab: Building a REST Service API
     * Lab: REST Service Code Review and Stub Development
@@ -46,7 +58,11 @@ php -S localhost:8080
     * Lab: Setting up the Jenkins CI
 
 ## Q & A
-*
+* Q: Is there a ZF module to generate swaggerhub-style API docs?
+* A: Via composer:
+    * `zfcampus/zf-apigility-documentation-swagger`
+    * `zircote/swagger-php`
+
 * Q: FAQ on Docker?
 * A: See: https://stackoverflow.com/questions/tagged/docker-image?sort=votes&pageSize=50
 
@@ -131,3 +147,4 @@ $view->render();
     * /home/vagrant/Zend/workspaces/DefaultWorkspace/php3/src/ModTargetedServerEnvironments/Deployment/Jenkins/build-JCI
     * Suggestion: just use one user for both labs
     * Troubleshooting tips: i.e. when do you have restart Jenkins, or refresh the browser
+* Stratigility example not working for the most part
