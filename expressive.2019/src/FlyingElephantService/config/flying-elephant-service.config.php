@@ -44,7 +44,7 @@ return [
     ],
 
     'propulsion' => [
-        'array_mapper_path' => __DIR__ . '/../../../../data/propulsion.php',
+        'array_mapper_path' => __DIR__ . '/../../../data/propulsion.php',
         'table' => 'propellant',
         'db' => \PDO::class,
     ],

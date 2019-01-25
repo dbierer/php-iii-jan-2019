@@ -8,7 +8,7 @@ use Psr\Container\ContainerInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use Zend\Expressive\Router\RouterInterface;
 use Zend\Expressive\Template\TemplateRendererInterface;
-use FlyingElephantService\Rest\PropulsionSystems\PropulsionSystemsResource;
+use FlyingElephantService\PropulsionSystems\PropulsionSystemsResource;
 
 use function get_class;
 

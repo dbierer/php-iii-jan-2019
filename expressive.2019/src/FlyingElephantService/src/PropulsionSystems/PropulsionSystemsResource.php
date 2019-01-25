@@ -5,7 +5,7 @@
  */
 namespace FlyingElephantService\PropulsionSystems;
 
-use FlyingElephantService\V1\Model\MapperInterface;
+use FlyingElephantService\Model\MapperInterface;
 use ZF\ApiProblem\ApiProblem;
 use ZF\Rest\AbstractResourceListener;
 use Zend\Diactoros\Response\JsonResponse;

@@ -44,7 +44,7 @@ class ConfigProvider
 				FSH\FlyingElephantHandler::class => FSH\FlyingElephantHandlerFactory::class,
 				PPS\PropulsionSystemsResource::class => PPS\PropulsionSystemsResourceFactory::class,
             ],
-			'services' => require __DIR__ . '/flying-elephant-service.config.php',
+			'services' => require __DIR__ . '/../config/flying-elephant-service.config.php',
         ];
     }
 

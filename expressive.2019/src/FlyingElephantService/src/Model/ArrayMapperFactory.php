@@ -35,6 +35,7 @@ class ArrayMapperFactory
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
+		//*** ??? does ServiceManager under Expressive create the "Config" service?
         if (!$container->has('Config')) {
             throw new DomainException(static::EXCEPTION_MSG . ' missing Config dependency');
         }
