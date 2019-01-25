@@ -5,7 +5,7 @@
 
 namespace FlyingElephantService\Model;
 
-use stdClass;
+use ArrayObject;
 use Zend\Paginator\Adapter\ArrayAdapter as ArrayPaginator;
 use Zend\Hydrator\HydratorInterface;
 
@@ -34,7 +34,7 @@ class HydratingArrayPaginator extends ArrayPaginator
     {
         parent::__construct($array);
         $this->hydrator = $hydrator;
-        $this->entityPrototype = $entityPrototype ?: new stdClass;
+        $this->entityPrototype = $entityPrototype ?: new ArrayObject();
     }
 
     /**

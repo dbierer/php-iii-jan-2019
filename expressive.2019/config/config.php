@@ -13,6 +13,10 @@ $cacheConfig = [
 ];
 
 $aggregator = new ConfigAggregator([
+    \Zend\Paginator\ConfigProvider::class,
+    \Zend\Hydrator\ConfigProvider::class,
+    \Zend\Db\ConfigProvider::class,
+    \Zend\Filter\ConfigProvider::class,
     \Zend\Expressive\ZendView\ConfigProvider::class,
     \Zend\HttpHandlerRunner\ConfigProvider::class,
     \Zend\Expressive\Router\ZendRouter\ConfigProvider::class,
@@ -31,8 +35,8 @@ $aggregator = new ConfigAggregator([
         : function(){ return[]; },
 
     // Default App module config
-    App\ConfigProvider::class,
-	FlyingElphantService\ConfigProvider::class,
+    \App\ConfigProvider::class,
+	\FlyingElephantService\ConfigProvider::class,
 	
     // Load application config in a pre-defined order in such a way that local settings
     // overwrite global settings. (Loaded as first to last):

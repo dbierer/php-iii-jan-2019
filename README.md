@@ -1,9 +1,18 @@
 # PHP III - Jan 2019
 
 file:///D:/Repos/PHP-Fundamentals-III/Course_Materials/index.html#/5/7
-NOTE TO SELF: backtrack through phing lab to see if you can replicate errors Gertjan reported
 
-##How to run the Stratigility demo
+## RE: Errors with phing and Jenkins
+* Gertjan reported errors when using Jenkins to run phing to deploy
+* Response from Daryl:
+    * Doug, it looks like I had inadvertantly lost the orderapp/build, and orderapp/build-JCI directories way back in January 2018. 
+    I was able to recover them from the January 9th commit and have attached them here as zip files. 
+    These contained the Phing build scripts, without which, the deployment will not work. Have the students put these in the orderapp directory, 
+    then double check the Jenkins "OrderAppDeploy" freestyle project, and execute the build again. Let me know if there are any issues. -- Daryl 
+    * Look in this repo for the `/php3/src/ModTargetedServerEnvironments/Deployment` folder
+    * Copy this directory structure and overwrite the `Phing/build` and `Jenkins/build-JCI` folders
+
+## How to run the Stratigility demo
 * Change to the /php3/stratigility folder
 * Run the PHP dev server as follows:
 ```
@@ -73,9 +82,6 @@ php -S localhost:8080
 
 * Q: FAQ on Docker?
 * A: See: https://stackoverflow.com/questions/tagged/docker-image?sort=votes&pageSize=50
-
-* Q: After the PHP 7.3 installation, how to change it back?
-* A:
 
 * Q: What is meant by "interned_strings_buffer" ? (OpCache)
 * A: See: https://stackoverflow.com/questions/27300219/zend-opcache-performance-settings-vs-default-settings
@@ -153,7 +159,7 @@ $view->render();
     * /home/vagrant/Zend/workspaces/DefaultWorkspace/php3/src/ModTargetedServerEnvironments/Deployment/Jenkins/build-JCI
     * Suggestion: just use one user for both labs
     * Troubleshooting tips: i.e. when do you have restart Jenkins, or refresh the browser
-* Stratigility example not working for the most part
+* Stratigility link from the main localhost web page doesn't work
 * phing lab:
     * from Gertjan to Host (privately): error happend at slide 213: phing -f build.xml
 ```

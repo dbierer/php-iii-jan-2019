@@ -1,12 +1,10 @@
 <?php
-
-declare(strict_types=1);
+namespace FlyingElephantService;
 
 use FlyingElephantService\Model as FSM;
 use FlyingElephantService\Handler as FSH;
-use FlyingElephantService\Rest\PropulsionSystems as PPS;
+use FlyingElephantService\PropulsionSystems as PPS;
 
-namespace FlyingElphantService;
 
 /**
  * The configuration provider for the App module
@@ -24,8 +22,9 @@ class ConfigProvider
      */
     public function __invoke() : array
     {
+        $config = $this->getDependencies();
         return [
-            'dependencies' => $this->getDependencies(),
+            'dependencies' => $config,
         ];
     }
 

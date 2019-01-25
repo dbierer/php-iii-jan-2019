@@ -5,14 +5,15 @@
 
 namespace FlyingElephantService\Model;
 
-use DomainException;
-use FlyingElephantService\V1\Rest\PropulsionSystems\{PropulsionSystemsCollection as Collection, PropulsionSystemsEntity as Entity};
-use InvalidArgumentException;
 use Traversable;
+use DomainException;
+use InvalidArgumentException;
 use Ramsey\Uuid\Uuid;
 use Zend\Stdlib\ArrayUtils;
 use Zend\Hydrator\ObjectProperty as ObjectPropertyHydrator;
 use ZF\Configuration\ConfigResource;
+
+use FlyingElephantService\PropulsionSystems\{PropulsionSystemsCollection as Collection, PropulsionSystemsEntity as Entity};
 
 
 /**
