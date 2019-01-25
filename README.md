@@ -5,20 +5,21 @@ file:///D:/Repos/PHP-Fundamentals-III/Course_Materials/index.html#/5/7
 ## RE: Errors with phing and Jenkins
 * Gertjan reported errors when using Jenkins to run phing to deploy
 * Response from Daryl:
-    * Doug, it looks like I had inadvertantly lost the orderapp/build, and orderapp/build-JCI directories way back in January 2018. 
-    I was able to recover them from the January 9th commit and have attached them here as zip files. 
-    These contained the Phing build scripts, without which, the deployment will not work. Have the students put these in the orderapp directory, 
-    then double check the Jenkins "OrderAppDeploy" freestyle project, and execute the build again. Let me know if there are any issues. -- Daryl 
+    * Doug, it looks like I had inadvertantly lost the orderapp/build, and orderapp/build-JCI directories way back in January 2018.
+    I was able to recover them from the January 9th commit and have attached them here as zip files.
+    These contained the Phing build scripts, without which, the deployment will not work. Have the students put these in the orderapp directory,
+    then double check the Jenkins "OrderAppDeploy" freestyle project, and execute the build again. Let me know if there are any issues. -- Daryl
     * Look in this repo for the `/php3/src/ModTargetedServerEnvironments/Deployment` folder
     * Copy this directory structure and overwrite the `Phing/build` and `Jenkins/build-JCI` folders
 
 ## How to run the Stratigility demo
-* Change to the /php3/stratigility folder
+* Change to the `Zend/workspaces/DefaultWorkspace/stratigility` folder
 * Run the PHP dev server as follows:
 ```
-/stratigility$ php -S localhost:8888 -t public
+php -S localhost:8888 -t public
 ```
 * Go to your browser and open this URL: `http://localhost:8888`
+* Alternatively set the permissions on the `log` folder so the `www-data` user has rights to the log file
 
 ## Homework
 * For Fri 25 Jan 2019
@@ -190,7 +191,7 @@ OrderApp > main:
 
      [echo] Directory exists, updating...
      [echo] Attempting filesync command on remote server orderapp from /home/deploy/ModTargetedServerEnvironments/Deployment/Phing/build/.. to /var/www/orderapp/releases/build-0.0.1
-deploy@orderapp's password: 
+deploy@orderapp's password:
  [filesync] /usr/bin/rsync -r --no-perms --verbose -e "ssh -i id_rsa.pub" --delete-after --ignore-errors --force --itemize-changes --exclude-from="/home/deploy/ModTargetedServerEnvironments/Deployment/Phing/build/../build/exclude.file" "/home/deploy/ModTargetedServerEnvironments/Deployment/Phing/build/.." "deploy@orderapp:/var/www/orderapp/releases/build-0.0.1" 2>&1
  [filesync] Task exited with code: 23
  [filesync] Task exited with message: (23) Partial transfer due to error
