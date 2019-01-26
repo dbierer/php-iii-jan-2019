@@ -1,6 +1,26 @@
 # PHP III - Jan 2019
 
-file:///D:/Repos/PHP-Fundamentals-III/Course_Materials/index.html#/5/7
+Last Update: 26 Jan 2019
+
+## RE: Errors with Expressive Lab using PropulsionSystems module from Apigility:
+* The service manager *does* contain a "config" service ... but it's case sensitive, with lower-case "c"
+* The class `Zend\Hydrator\ObjectProperty` has been renamed to `Zend\Hydrator\ObjectPropertyHydrator`
+* Copied the `propulsion.php` data generator from `apigility.complete/data` to `expressive.2019/data`
+* Entered into `/expressive.2019/config/routes.php` this line:
+```
+$app->get('/api/propulsion-systems[/:id]', FlyingElephantService\Handler\FlyingElephantHandler::class, 'api.propulsion_systems');
+```
+
+* Otherwise, the errors shown in class were mainly due to compressing the directory structure of `PropulsionSystems` to get rid of `/V1/Rest`
+* Code works OK now:
+    * Go to the `expressive.2019` folder
+    * Run `composer install`
+    * Run `php -S localhost:8888 -t public`
+    * From your browser (or REST client) try these tests:
+```
+http://localhost:8888/api/propulsion-systems
+http://localhost:8888/api/propulsion-systems/01d1c119-bf97-4a05-b5d6-d94d950d049f
+```
 
 ## RE: Errors with phing and Jenkins
 * Gertjan reported errors when using Jenkins to run phing to deploy

@@ -10,7 +10,7 @@ use DomainException;
 use InvalidArgumentException;
 use Ramsey\Uuid\Uuid;
 use Zend\Stdlib\ArrayUtils;
-use Zend\Hydrator\ObjectProperty as ObjectPropertyHydrator;
+use Zend\Hydrator\ObjectPropertyHydrator;
 use ZF\Configuration\ConfigResource;
 
 use FlyingElephantService\PropulsionSystems\{PropulsionSystemsCollection as Collection, PropulsionSystemsEntity as Entity};

@@ -5,6 +5,7 @@
 use Zend\Validator\{NotEmpty, Digits};
 use Zend\Filter\StripTags;
 //use ZF\MvcAuth\Authentication\{HttpAdapter, OAuth2Adapter};
+use FlyingElephantService\Model\ArrayMapperFactory;
 use FlyingElephantService\PropulsionSystems\{
     PropulsionSystemsResource,
     PropulsionSystemsEntity,
@@ -42,9 +43,9 @@ return [
             ],
         ],
     ],
-
-    'propulsion' => [
-        'array_mapper_path' => __DIR__ . '/../../../data/propulsion.php',
+    // propulsion
+    ArrayMapperFactory::CONFIG_KEY => [
+        ArrayMapperFactory::ARRAY_MAPPER_PATH_KEY => realpath(__DIR__ . '/../../../data/propulsion.php'),
         'table' => 'propellant',
         'db' => \PDO::class,
     ],
@@ -101,7 +102,7 @@ return [
                 'entity_identifier_name' => 'id',
                 'route_name' => 'fes-rest-propulsion-systems',
                 'route_identifier_name' => 'propulsion_systems_id',
-                'hydrator' => \Zend\Hydrator\ObjectProperty::class,
+                'hydrator' => \Zend\Hydrator\ObjectPropertyHydrator::class,
             ],
             PropulsionSystemsCollection::class => [
                 'entity_identifier_name' => 'id',

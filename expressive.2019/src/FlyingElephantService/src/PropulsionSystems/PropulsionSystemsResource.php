@@ -7,12 +7,13 @@ namespace FlyingElephantService\PropulsionSystems;
 
 use FlyingElephantService\Model\MapperInterface;
 use ZF\ApiProblem\ApiProblem;
-use ZF\Rest\AbstractResourceListener;
+//use ZF\Rest\AbstractResourceListener;
 use Zend\Diactoros\Response\JsonResponse;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
-class PropulsionSystemsResource extends AbstractResourceListener
+//class PropulsionSystemsResource extends AbstractResourceListener
+class PropulsionSystemsResource
 {
     protected $mapper;
     protected $auth;

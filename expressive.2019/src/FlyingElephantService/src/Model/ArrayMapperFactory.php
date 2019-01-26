@@ -23,6 +23,7 @@ use Interop\Container\ContainerInterface;
 class ArrayMapperFactory
 {
     const CONFIG_KEY = 'propulsion';
+    const ARRAY_MAPPER_PATH_KEY = 'array_mapper_path';
     const EXCEPTION_MSG = 'Cannot create Propulsion\ArrayMapper; ';
 
     /**
@@ -35,17 +36,17 @@ class ArrayMapperFactory
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-		//*** ??? does ServiceManager under Expressive create the "Config" service?
-        if (!$container->has('Config')) {
+		//*** ServiceManager under Expressive creates the "config" service (i.e. *not* "Config"!)
+        if (!$container->has('config')) {
             throw new DomainException(static::EXCEPTION_MSG . ' missing Config dependency');
         }
 
-        $config = $container->get('Config');
-        if (! isset($config[static::CONFIG_KEY]['array_mapper_path'])) {
-            throw new DomainException(static::EXCEPTION_MSG . 'missing array_mapper_path configuration');
+        $config = $container->get(static::CONFIG_KEY);
+        if (!$config) {
+            throw new DomainException(static::EXCEPTION_MSG . 'missing ' . static::ARRAY_MAPPER_PATH_KEY . ' configuration');
         }
 
-        $path = $config[static::CONFIG_KEY]['array_mapper_path'];
+        $path = $config[static::ARRAY_MAPPER_PATH_KEY];
         if (! file_exists($path)) {
             throw new DomainException(sprintf(
                 static::EXCEPTION_MSG . 'path "%s" does not exist',
