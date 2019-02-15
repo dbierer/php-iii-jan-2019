@@ -1,6 +1,6 @@
 # PHP III - Jan 2019
 
-Last Update: 26 Jan 2019
+Last Update: 15 Feb 2019
 
 ## RE: Errors with Expressive Lab using PropulsionSystems module from Apigility:
 * The service manager *does* contain a "config" service ... but it's case sensitive, with lower-case "c"
@@ -93,8 +93,7 @@ php -S localhost:8080
 
 ## Q & A
 * Q: Does Apigility use ZF2 or ZF3?
-* A: Short Answer: ZF3
-* A: Long Answer: Originally it used ZF2.  After ZF 2.4, which is the Long Term Support (LTS) version, the difference between ZF 2.5+ and ZF 3 is a marketing gimic. Ergo ... Apigility uses ZF3.
+* A: ZF2
 
 * Q: Is there a ZF module to generate swaggerhub-style API docs?
 * A: Via composer:
@@ -156,8 +155,8 @@ php c:\path\to\script.php
     * https://github.com/dbierer/php-iii-jul-2018
 
 ## ERRATA
-* runTransactionModel doesn't seem to work
-* file:///D:/Repos/PHP-Fundamentals-III/Course_Materials/index.html#/3/12: EventManager needs to be rewritten (see repo for rewrites)
+* file:///D:/Repos/PHP-Fundamentals-III/Course_Materials/index.html#/3/12: EventManager needs to be rewritten
+    * see files in the directory structure `/php3/src/` and `/php3/src/ModSPL/StandardDatastructures/SplPriorityQueue`in the repo for rewrites
 * file:///D:/Repos/PHP-Fundamentals-III/Course_Materials/index.html#/3/42: use the autoloader to avoid the 3rd `require` statement
 ```
 // runLoader.php in the SPL Functions area in the VM
@@ -175,13 +174,12 @@ $view = $controller->init($config);
 $view->render();
 ```
 * file:///D:/Repos/PHP-Fundamentals-III/Course_Materials/index.html#/5/43: dir structure changed
-    * Unable to complete lab
-    * See email for errors
-    * /home/vagrant/Zend/workspaces/DefaultWorkspace/php3/src/ModTargetedServerEnvironments/Deployment/Jenkins/build-JCI
+    * Look in this repo for the `/php3/src/ModTargetedServerEnvironments/Deployment` folder
+    * Copy this directory structure and overwrite the `Phing/build` and `Jenkins/build-JCI` folders
     * Suggestion: just use one user for both labs
     * Troubleshooting tips: i.e. when do you have restart Jenkins, or refresh the browser
-* Stratigility link from the main localhost web page doesn't work
 * phing lab:
+    * This error should be fixed by copying the files into `Phing/build` as mentioned just above
     * from Gertjan to Host (privately): error happend at slide 213: phing -f build.xml
 ```
 sudo phing -f build.xml

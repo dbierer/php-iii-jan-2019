@@ -1,5 +1,7 @@
 <?php
-require __DIR__ . '/../../../../vendor/autoload.php';
+require __DIR__ . '/PSR4Loader.php';
+PSR4Loader::init([__DIR__]);
+
 use src\ModSPL\StandardDatastructures\SplPriorityQueue\{Event, EventManager};
 
 $eventManager = new EventManager();
@@ -15,19 +17,27 @@ $eventManager->attach('onCheck', $checkComplete, 3);
 $eventManager->attach('onCheck', $statusCheck, 2);
 
 // Build some callbacks
-$test1 = function (Event $e){ echo 'test 1:' . $e->getName() . PHP_EOL; };
-$test2 = function (Event $e){ echo 'test 2: ' . $e->getName() . PHP_EOL; };
+$test1 = function (Event $e){ echo 'test 1' . PHP_EOL; };
+$test2 = function (Event $e){ echo 'test 2' . PHP_EOL; };
+$test3 = function (Event $e){ echo 'test 3' . PHP_EOL; };
+$test4 = function (Event $e){ echo 'test 4' . PHP_EOL; };
 
 // Attach prioritized listeners--priority assigned as needed. Change priorities and watch the calls change.
-$eventManager->attach('test', $test1, 1);
-$eventManager->attach('test', $test2, 2);
+$eventManager->attach('test', $test1, 2);
+$eventManager->attach('test', $test2, 1);
+$eventManager->attach('test', $test3, 4);
+$eventManager->attach('test', $test4, 3);
 
 // Just before check start, trigger pre stage
-echo "\nonCheck\n";
+echo "\n-------------------\n";
+echo "onCheck\n";
+echo "-------------------\n";
 $eventManager->trigger('onCheck');
 echo PHP_EOL;
 
-echo "\nTest\n";
+echo "\n-------------------\n";
+echo "Test\n";
+echo "-------------------\n";
 $eventManager->trigger('test');
 
 
